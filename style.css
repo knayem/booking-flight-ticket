@@ -10,7 +10,7 @@
     height: auto;
     width: 100%;
 
-background-color: honeydew;
+background-color:black;
 
 }
 
@@ -18,7 +18,9 @@ background-color: honeydew;
 
 
 body{
-    background-color: snow;
+
+    /* background-image: url(bg.png); */
+    background-color:black ;
     
     font-family: 'Roboto', sans-serif;
     
@@ -44,12 +46,12 @@ nav ul{
     margin: 0px 6px;
 }
 nav ul li a{
-    color:blue;
+    color:rgb(246, 246, 250);
     padding: 10px;
     text-transform: uppercase;
 }
 nav ul li  a:hover{
-    background-color:skyblue;
+    background-color:rgb(77, 195, 241);
     border-radius: 5px;
 }
 .main-content{

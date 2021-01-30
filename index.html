@@ -39,7 +39,7 @@
             <h3>Booking Flights</h3>
             <div class="input-group">
                 <label for="">Flying From</label>
-                <input class="inp-style" type="text" name="" placeholder="Dhake, Bangladesh">
+                <input class="inp-style" type="text" name="" placeholder="Dhaka, Bangladesh">
             </div>
             <div class="input-group">
                 <label for="">Flying To</label>
@@ -72,11 +72,11 @@
 
                 <div  class="plus-minus-btn">
                     <div class="input-group number-spinner">
-                        <button id="case1-increase" class="btn btn-default">
+                        <button onclick="controlProductChanging(  true); " class="btn btn-default">
                             <i class="case-plus "> + </i>
                         </button>
                         
-                        <button id="case1-decrease" class="btn btn-default">
+                        <button onclick="controlProductChanging(false);" class="btn btn-default">
                             <i class="case-minus"> - </i>
                         </button>
                         
@@ -93,7 +93,7 @@
             <div class="col-md-8 width-half ">
         <div class="input-group f-class">
             <div>
-                <h4>First Class ($<span id="total-cost">100</span> )</h4>
+                <h4> Economy ($<span id="total-cost">100</span> )</h4>
                 <input id="case2-count" class="inp-style inp-width"  value="0">
             </div>
         </div>
@@ -102,11 +102,11 @@
 
             <div  class="plus-minus-btn">
                 <div class="input-group number-spinner">
-                    <button id="case2-increase" class="btn btn-default">
+                    <button onclick=" controlProductChanging2(true);" class="btn btn-default">
                         <i class="case-plus "> + </i>
                     </button>
                     
-                    <button id="case2-decrease" class="btn btn-default">
+                    <button onclick="controlProductChanging2(false);" class="btn btn-default">
                         <i class="case-minus"> - </i>
                     </button>
                    
@@ -117,7 +117,17 @@
     
     
     </div>
-            
+    
+    
+    
+                       <div class="amount">
+                     <div class="left">
+                         <p>Subtotal</p>
+                     </div>
+                    <div class="right">
+                        <p> <span style="color: red; font-size: 20px;">$</span><span id="sub-total">00</span> </p>
+                    </div>
+                    </div>
            
 
                 <div class="amount">
@@ -156,80 +166,51 @@
 </main>
 </section>
 <main id="transaction-area" class="container" > 
-    <h1 style=" font-family: 'Original Surfer', cursive; color:blue; text-align: center ; margin:2% ;"> Congratulation <br>
+    <h1 style=" font-family: 'Original Surfer', cursive; color:goldenrod; text-align: center ; margin:2% ;"> Congratulation <br>
          Your paurches is successed
+         <h4 style="color: honeydew; text-align: center;"> Your Flight Information <img style="height: 30px; width: 30px;" src="buy.png" alt="">
+            <br>
+        </h4>
+         <br>
 
 
-
-
-
-
-
-         <button  class="btn-style">check in details</button>
+         <button  class="btn-style"> <img style="height: 20px; width: 20px;" src="title.png" alt=""> Check Here</button>
 
 
          <br>
         </h1>
-        <img style=" height: 200px; width: 300px;  " src="air.jpg" alt="">
+        <img style=" height: 400px; width: 1000px; margin-left: 10%;" src="air.jpg" alt="">
     
 </div>
     
     <script>
-                     //## case1 ###//
-        //increasing-
-
-        document.getElementById('case1-increase').addEventListener('click' , function(){
-            controlProductChanging(true);
-
-        });
-
-                        //decreasing
-        document.getElementById('case1-decrease').addEventListener('click' , function(){
-            controlProductChanging(false);
-
-        });
-                   //## case1 ###//
+         
+                   ///////////// case-1 first class
 
 
-
-        function controlProductChanging(isIncreasing){
-            const case1Input=document.getElementById('case1-count');
-            const case1Count=parseInt(case1Input.value);
-            let caseNewCount= case1Count;
-            if(isIncreasing == true){
+         function controlProductChanging(isIncreasing){
+             const case1Input=document.getElementById('case1-count');
+             const case1Count=parseInt(case1Input.value);
+             let caseNewCount= case1Count;
+         if(isIncreasing == true){
 
                 caseNewCount= case1Count + 1;
                 case1Input.value = caseNewCount;
-            //   const totalCost= caseNewCount * 150 ;
-               
-            //   document.getElementById('total-cost').innerText = totalCost;
+            
 
             }
              if(isIncreasing == false && case1Count > 0 ){
 
-                caseNewCount= case1Count - 1;
-                case1Input.value = caseNewCount;
-            }
+                 caseNewCount= case1Count - 1;
+                 case1Input.value = caseNewCount;
+             }
             calculateTotal();
             
         
-            }
+             }
 
-                       //## case-2 ###//
-        //increasing-
-
-        document.getElementById('case2-increase').addEventListener('click' , function(){
-            controlProductChanging2(true);
-
-        });
-
-        //decreasing
-
-        document.getElementById('case2-decrease').addEventListener('click' , function(){
-            controlProductChanging2(false);
-
-        });
-                   //## case-2 ###//
+           
+                   //## case-2 economy ###//
 
                    function controlProductChanging2(isIncreasing){
             const case2Input=document.getElementById('case2-count');
@@ -239,9 +220,7 @@
 
                 caseNewCount= case2Count + 1;
                 case2Input.value = caseNewCount;
-            //   const totalCost= caseNewCount * 150 ;
-               
-            //   document.getElementById('total-cost').innerText = totalCost;
+            
 
             }
              if(isIncreasing == false && case2Count > 0 ){
@@ -252,6 +231,8 @@
             calculateTotal();
             
             }
+
+                  ////Amount calculation
 
 
             function calculateTotal(){
@@ -264,18 +245,18 @@
             const case2Count=parseInt(case2Input.value);
             
             const total = case1Count * 150 + case2Count * 100 ;
-            const tax = (case1Count * 150 + case2Count * 100 )* 0.1 ;
+            const Tax = (case1Count * 150 + case2Count * 100 )* 0.1 ;
             
-            const totalCost = tax + total ;
-            
+            const totalCost = Tax + total ;
+             const subTotal = total ;
             document.getElementById('total').innerText = totalCost;
-            document.getElementById('tax').innerText = tax;
-
+            document.getElementById('tax').innerText = Tax;
+            document.getElementById('sub-total').innerText = subTotal;
                 
             }
 
             
-
+                       //// transaction
 
             const buyBtn = document.getElementById("buy-massage");
             buyBtn.addEventListener("click" , function(){
@@ -287,21 +268,7 @@
 
             })
        
-//             function confirmMassage(){
-//                 const caseInput1=document.getElementById('case1-count');
-//             const caseCount1=parseInt(case1Input.value);
 
-//             const caseInput2=document.getElementById('case2-count');
-//             const caseCount2=parseInt(case2Input.value);
-//                 if ( caseCount1 < 0 || aseCount2 > 0  ){
-
-//                     swal("Congrats!", ", Your account is created!", "success");
-//                 }
-//                 else{
-
-//                 }
-	
-// }
 
 
                                             //Thank You
