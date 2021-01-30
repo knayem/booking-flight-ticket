@@ -5,9 +5,23 @@
     text-decoration: none;
     list-style-type: none;
 }
+
+.container{
+    height: auto;
+    width: 100%;
+
+background-color: honeydew;
+
+}
+
+
+
+
 body{
+    background-color: snow;
+    
     font-family: 'Roboto', sans-serif;
-    background:url("images/bg.png");
+    
     background-repeat: no-repeat;
     background-position: center center;
     background-attachment: scroll;
@@ -30,15 +44,17 @@ nav ul{
     margin: 0px 6px;
 }
 nav ul li a{
-    color: #fff;
+    color:blue;
     padding: 10px;
     text-transform: uppercase;
 }
-nav ul li a:hover, a.active{
-    background-color: #3352F2;
+nav ul li  a:hover{
+    background-color:skyblue;
     border-radius: 5px;
 }
 .main-content{
+    
+    background:url("Booking.jpg");
     display: grid;
     grid-template-columns: 2fr 3fr;
     gap: 70px;
@@ -63,15 +79,35 @@ nav ul li a:hover, a.active{
     align-items: center;
 }
 .inp-width{
-    min-width: 300px;
+    min-width: 250px;
 }
 .plus-minus-btn{
-    color: #3352F2;
+    width: unset;
+    color: #f8f9fc;
     font-size: 30px;
     padding: 2px;
     margin-top: 10px;
     word-spacing: 20px;
 }
+.input-group {
+    width: unset;
+}
+.case-plus .case-minus{
+ font-size: 100px;
+
+}
+.width-half{
+
+    
+    /* display: flex; */
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.btn-default {
+    background-color:#3352F2;
+}
+
 .booking-form  .calculations{
     margin: 10px 0;
 }
@@ -106,6 +142,12 @@ nav ul li a:hover, a.active{
     margin-bottom: 25px;
 }
 
+.width-half {
+
+
+
+
+}
 .btn-style{
     display: block;
     width: 100%;
@@ -119,4 +161,9 @@ nav ul li a:hover, a.active{
 .amount{
     display: flex;
     justify-content: space-between;
+}
+#transaction-area{
+
+display: none;
+
 }

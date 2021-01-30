@@ -2,19 +2,22 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="alert/dist/sweetalert-dev.js"></script>
+    <link rel="stylesheet" href="alert/dist/sweetalert.css">
+    
     <title>Flight Booking</title>
-    <!-- Fonts -->
+    <link rel="shortcut icon" href="title.png" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@400;500;700&display=swap"
         rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Original+Surfer&display=swap" rel="stylesheet">
     <!-- Stylesheet -->
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <!--Header and Menu Section-->
+    <!-- //Header and Menu Section -->
     <header class="container">
         <nav>
             <ul>
@@ -27,7 +30,11 @@
     </header>
 
     <!--Booking Section-->
+    <section id="display"> 
     <main class="main-content container">
+        <section class="row">
+            <div class="col-md-6">
+
         <div class="booking-form">
             <h3>Booking Flights</h3>
             <div class="input-group">
@@ -48,41 +55,77 @@
                     <input class="inp-style" type="date" name="">
                 </div>
             </div>
+
+                <!-- ///////// -->
+
+            <div class="row">
+                
+                <div class="col-md-8 width-half ">
             <div class="input-group f-class">
                 <div>
-                    <label for="">First Class ($150)</label>
-                    <input class="inp-style inp-width" type="number" name="">
-                </div>
-                <div class="plus-minus-btn">
-                    <p>+ -</p>
+                    <h4>First Class ($<span id="total-cost">150</span> )</h4>
+                    <input id="case1-count" class="inp-style inp-width"  value="0">
                 </div>
             </div>
+                </div>
+                <div class="col-md-4  width-half">
+
+                <div  class="plus-minus-btn">
+                    <div class="input-group number-spinner">
+                        <button id="case1-increase" class="btn btn-default">
+                            <i class="case-plus "> + </i>
+                        </button>
+                        
+                        <button id="case1-decrease" class="btn btn-default">
+                            <i class="case-minus"> - </i>
+                        </button>
+                        
+                </div>
+            </div>
+        
+        </div>
+
+        
+        
+
+
+        <div class="row">
+            <div class="col-md-8 width-half ">
+        <div class="input-group f-class">
+            <div>
+                <h4>First Class ($<span id="total-cost">100</span> )</h4>
+                <input id="case2-count" class="inp-style inp-width"  value="0">
+            </div>
+        </div>
+            </div>
+            <div class="col-md-4  width-half">
+
+            <div  class="plus-minus-btn">
+                <div class="input-group number-spinner">
+                    <button id="case2-increase" class="btn btn-default">
+                        <i class="case-plus "> + </i>
+                    </button>
+                    
+                    <button id="case2-decrease" class="btn btn-default">
+                        <i class="case-minus"> - </i>
+                    </button>
+                   
+                
+                
+            </div>
+        </div>
+    
+    
+    </div>
             
-            <div class="input-group f-class">
-                <div>
-                    <label for="">Economy ($100)</label>
-                    <input class="inp-style inp-width" type="number" name="">
-                </div>
-                <div class="plus-minus-btn">
-                    <p> <span>+</span> <span>-</span> </p>
-                </div>
-            </div>
-            <div class="calculations">
-                <div class="amount">
-                    <div class="left">
-                        <p>Subtotal</p>
-                    </div>
-                    <div class="right">
-                        <p>$500</p>
-                    </div>
-                </div>
+           
 
                 <div class="amount">
                     <div class="left">
                         <p>Charge 10% VAT</p>
                     </div>
                     <div class="right">
-                        <p>$50</p>
+                        <p> <span style="color: red; font-size: 20px;">$</span><span id="tax">00</span> </p>
                     </div>
                 </div>
                 <hr>
@@ -91,20 +134,178 @@
                         <h4>Total</h4>
                     </div>
                     <div class="right">
-                        <p>$550</p>
+                        <p> <span style="color: red; font-size: 20px;">$</span><span id="total">00</span> </p>
                     </div>
                 </div>
             </div>
-            <button class="btn-style">Book Now</button>
+            <button id="buy-massage" class="btn-style">Book Now</button>
         </div>
+    </div>
+        
+        </section>
 
+        <section>
+            <div class="col-md-6"></div>
         <div class="booking-content">
-            <h1>discover <br> around the world</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicingelit. Provident voluptatibus quam fuga laborumalias veniam libero autem quasi maxime ullam vero nama imi dolor, architecto ab facilis eaque deserunt nobise voluptatibus quam</p>
+            <h1 style=" font-family: 'Original Surfer', cursive; color:blue; text-align: center ; font-size: 100px;"  >discover <br> around the world</h1>
+            <p style=" color: darkblue;text-align: justify;" >Lorem ipsum dolor sit amet consectetur adipisicingelit. Provident voluptatibus quam fuga laborumalias veniam libero autem quasi maxime ullam vero nama imi dolor</p>
         </div>
+        </div>
+       
     </section>
+</main>
+</section>
+<main id="transaction-area" class="container" > 
+    <h1 style=" font-family: 'Original Surfer', cursive; color:blue; text-align: center ; margin:2% ;"> Congratulation <br>
+         Your paurches is successed
 
-    <!--Thank You-->
+
+
+
+
+
+
+         <button  class="btn-style">check in details</button>
+
+
+         <br>
+        </h1>
+        <img style=" height: 200px; width: 300px;  " src="air.jpg" alt="">
+    
+</div>
+    
+    <script>
+                     //## case1 ###//
+        //increasing-
+
+        document.getElementById('case1-increase').addEventListener('click' , function(){
+            controlProductChanging(true);
+
+        });
+
+                        //decreasing
+        document.getElementById('case1-decrease').addEventListener('click' , function(){
+            controlProductChanging(false);
+
+        });
+                   //## case1 ###//
+
+
+
+        function controlProductChanging(isIncreasing){
+            const case1Input=document.getElementById('case1-count');
+            const case1Count=parseInt(case1Input.value);
+            let caseNewCount= case1Count;
+            if(isIncreasing == true){
+
+                caseNewCount= case1Count + 1;
+                case1Input.value = caseNewCount;
+            //   const totalCost= caseNewCount * 150 ;
+               
+            //   document.getElementById('total-cost').innerText = totalCost;
+
+            }
+             if(isIncreasing == false && case1Count > 0 ){
+
+                caseNewCount= case1Count - 1;
+                case1Input.value = caseNewCount;
+            }
+            calculateTotal();
+            
+        
+            }
+
+                       //## case-2 ###//
+        //increasing-
+
+        document.getElementById('case2-increase').addEventListener('click' , function(){
+            controlProductChanging2(true);
+
+        });
+
+        //decreasing
+
+        document.getElementById('case2-decrease').addEventListener('click' , function(){
+            controlProductChanging2(false);
+
+        });
+                   //## case-2 ###//
+
+                   function controlProductChanging2(isIncreasing){
+            const case2Input=document.getElementById('case2-count');
+            const case2Count=parseInt(case2Input.value);
+            let caseNewCount= case2Count;
+            if(isIncreasing == true){
+
+                caseNewCount= case2Count + 1;
+                case2Input.value = caseNewCount;
+            //   const totalCost= caseNewCount * 150 ;
+               
+            //   document.getElementById('total-cost').innerText = totalCost;
+
+            }
+             if(isIncreasing == false && case2Count > 0 ){
+
+                caseNewCount= case2Count - 1;
+                case2Input.value = caseNewCount;
+            }
+            calculateTotal();
+            
+            }
+
+
+            function calculateTotal(){
+
+                const case1Input=document.getElementById('case1-count');
+            const case1Count=parseInt(case1Input.value);
+
+                
+            const case2Input=document.getElementById('case2-count');
+            const case2Count=parseInt(case2Input.value);
+            
+            const total = case1Count * 150 + case2Count * 100 ;
+            const tax = (case1Count * 150 + case2Count * 100 )* 0.1 ;
+            
+            const totalCost = tax + total ;
+            
+            document.getElementById('total').innerText = totalCost;
+            document.getElementById('tax').innerText = tax;
+
+                
+            }
+
+            
+
+
+            const buyBtn = document.getElementById("buy-massage");
+            buyBtn.addEventListener("click" , function(){
+                  const mainArea = document.getElementById("display")
+                  mainArea.style.display ="none";
+              console
+              const transactionArea= document.getElementById("transaction-area")
+                transactionArea.style.display="block";
+
+            })
+       
+//             function confirmMassage(){
+//                 const caseInput1=document.getElementById('case1-count');
+//             const caseCount1=parseInt(case1Input.value);
+
+//             const caseInput2=document.getElementById('case2-count');
+//             const caseCount2=parseInt(case2Input.value);
+//                 if ( caseCount1 < 0 || aseCount2 > 0  ){
+
+//                     swal("Congrats!", ", Your account is created!", "success");
+//                 }
+//                 else{
+
+//                 }
+	
+// }
+
+
+                                            //Thank You
+    </script>
 </body>
 
 </html>
